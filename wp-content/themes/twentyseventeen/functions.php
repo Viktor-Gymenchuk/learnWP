@@ -596,6 +596,8 @@ require get_parent_theme_file_path('/inc/customizer.php');
 require get_parent_theme_file_path('/inc/icon-functions.php');
 
 
+
+//регистрация пользовательского типа записи
 add_action('init', 'my_salo');
 function my_salo()
 {
