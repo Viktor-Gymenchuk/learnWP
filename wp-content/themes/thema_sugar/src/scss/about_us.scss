@@ -1,0 +1,49 @@
+.about_us {
+  h2 {
+    margin: 34px 0 40px;
+  }
+  h6 {
+    font-size: 16px;
+    font-family: 'RobotoBold';
+    margin-bottom: 24px;
+  }
+  p {
+    line-height: 22px;
+  }
+  .firft-info {
+    padding-right: 15px;
+  }
+  .second-info {
+    padding-left: 15px;
+  }
+  .more_about-us {
+    text-align: center;
+    padding-bottom: 50px;
+    a {
+      display: inline-block;
+      padding: 12px 90px 12px 50px;
+      border-radius: 30px;
+      color: #333;
+      font-size: 20px;
+      border: 1px solid #c2c2c2;
+      background: url(/wp-content/themes/yadss/images/st-right.png) 204px center no-repeat;
+    }
+  }
+  .additional-services {
+    li {
+      margin-bottom: 12px;
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .about_us {
+    .second-info, .firft-info {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .more_about-us a{
+      padding: 12px 50px 12px 20px;
+      background-position: 171px center;
+    }
+  }
+}
