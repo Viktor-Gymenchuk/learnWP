@@ -1,0 +1,108 @@
+.product {
+  .slider-product {
+    position: relative;
+    #sl-paginaion-bioenergy {
+      position: absolute;
+      right: 30px;
+      bottom: 4px;
+      font-size: 14px;
+      font-family: 'RobotoBold';
+    }
+    ul {
+      position: relative;
+      height: 330px;
+      overflow: hidden;
+      .slick-arrow {
+        bottom: 5px;
+        transform: translate(0, 0);
+        top: unset;
+        color: #333;
+        position: absolute;
+        &::before{
+          top: 6px;
+          position: absolute;
+        }
+      }
+      .slick-prev {
+        left: unset;
+        right: 60px;
+        z-index: 11;
+        &::before {
+          content: '';
+          width: 10px;
+          height: 10px;
+          transform: rotate(45deg);
+          border-left: 2px solid #333;
+          border-bottom: 2px solid #333;
+        }
+        &:hover{
+          &::before{
+            border-color: #6f9700;
+          }
+        }
+      }
+      .slick-next {
+        right: 15px;
+        z-index: 11;
+        &::before {
+          content: '';
+          width: 10px;
+          height: 10px;
+          transform: rotate(-45deg);
+          border-right: 2px solid #333;
+          border-bottom: 2px solid #333;
+        }
+        &:hover{
+          &::before{
+            border-color: #6f9700;
+          }
+        }
+      }
+      .slick-list {
+        height: 330px;
+      }
+      li {
+        height: 330px;
+        position: relative;
+        p {
+          position: absolute;
+          width: 100%;
+          bottom: 0;
+          background-color: rgba(225, 225, 225, 0.9);
+          color: #333333;
+          z-index: 10;
+          margin-bottom: 0;
+          font-size: 14px;
+          padding: 5px;
+
+        }
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 5;
+        }
+      }
+    }
+  }
+  .list-products{
+    float: left;
+    width: 100%;
+    padding-top: 7px;
+    h4{
+      font-size: 16px;
+      font-family: 'RobotoBold';
+      margin-top: 17px;
+      margin-bottom: 18px;
+    }
+    p.m-top{
+      margin-top: 17px;
+    }
+    p{
+      font-size: 14px;
+      margin-bottom: 7px;
+    }
+  }
+}

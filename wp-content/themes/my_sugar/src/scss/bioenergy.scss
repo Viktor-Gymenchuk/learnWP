@@ -1,0 +1,119 @@
+.bioenergy{
+  h2{
+    margin: 34px 0 44px;
+  }
+  .slider-bioenergy{
+    height: 275px;
+    width: calc(100% - 15px);
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px;
+    ul{
+      margin-bottom: 0;
+      li{
+        height: 275px;
+        img{
+          height: 250px;
+        }
+        p{
+          margin-bottom: 0;
+          font-size: 14px;
+          padding-top: 5px;
+        }
+      }
+
+    }
+    .slick-arrow {
+      bottom: 1px;
+      transform: translate(0, 0);
+      top: unset;
+      color: #333;
+      position: absolute;
+      &::before{
+        top: 6px;
+        position: absolute;
+      }
+    }
+    .slick-prev {
+      left: unset;
+      right: 50px;
+      z-index: 11;
+      &::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        transform: rotate(45deg);
+        border-left: 2px solid #333;
+        border-bottom: 2px solid #333;
+      }
+      &:hover{
+        &::before{
+          border-color: #6f9700;
+        }
+      }
+    }
+    .slick-next {
+      right: 9px;
+      z-index: 11;
+      &::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        transform: rotate(-45deg);
+        border-right: 2px solid #333;
+        border-bottom: 2px solid #333;
+      }
+      &:hover{
+        &::before{
+          border-color: #6f9700;
+        }
+      }
+    }
+    #sl-paginaion-bioenergy {
+      position: absolute;
+      right: 23px;
+      bottom: 1px;
+      font-size: 14px;
+      font-family: 'RobotoBold';
+    }
+  }
+  .info{
+    padding-left: 15px;
+    padding-bottom: 16px;
+    h4{
+      font-size: 16px;
+      margin-top: -4px;
+      margin-bottom: 24px;
+      font-family: 'RobotoBold';
+    }
+    p{
+      font-size: 14px;
+      line-height: 22px;
+    }
+  }
+  .addres{
+    padding-left: 15px;
+    h4{
+      font-size: 16px;
+      margin-bottom: 27px;
+    }
+    p{
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+  }
+}
+@media only screen and (max-width: 992px){
+  .bioenergy {
+    .slider-bioenergy {
+      width: 370px;
+      margin: 0 auto 30px;
+    }
+    .info, .addres{
+      padding-left: 0;
+    }
+  }
+
+
+}

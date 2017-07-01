@@ -1,0 +1,140 @@
+.seed {
+  .st-seed-left{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0,-50%);
+    width: 33px;
+    height: 23px;
+    background: url('/images/st-seed-left.png') center center no-repeat;
+  }
+  table {
+    width: 100%;
+    th {
+      text-align: center;
+      padding: 20px 0 17px;
+    }
+    td {
+      font-size: 14px;
+      font-family: 'RobotoRegular';
+      text-align: center;
+      border: 1px solid #bdbfc5;
+      padding: 15px 24px 18px;
+    }
+    tr {
+      td:nth-child(1) {
+        width: 5.9%;
+        border-left: none;
+      }
+      td:nth-child(2) {
+        width: 19.6%;
+      }
+      td:nth-child(3) {
+        width: 16.5%;
+      }
+      td:nth-child(4) {
+        width: 19%;
+      }
+      td:nth-child(5) {
+        width: 37%;
+        border-right: none;
+      }
+    }
+
+  }
+  .l-info{
+    padding-right: 15px;
+  }
+  .r-info{
+    padding-left: 15px;
+  }
+}
+
+.pagination {
+  width: 100%;
+  text-align: center;
+  ul {
+    display: inline-block;
+    li {
+      float: left;
+      width: 35px;
+      margin-right: 10px;
+      a{
+        font-size: 16px;
+        color: #fff;
+        background-color: #bdbfc5;
+        display: inline-block;
+        font-family: 'RobotoBold';
+        width: 35px;
+        height: 35px;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 0;
+        position: relative;
+      }
+
+    }
+    li:first-child{
+      a{
+
+        background: #fff;
+        &::before{
+          content: '';
+          width: 15px;
+          height: 15px;
+          left: 50%;
+          top: 10px;
+          position: absolute;
+          border-left: 2px solid #bfc1c6;
+          border-bottom: 2px solid #bfc1c6;
+          transform: rotate(45deg);
+        }
+      }
+    }
+    li.active{
+      a{
+        background: #6f9700;
+      }
+    }
+    li:last-child{
+      a{
+        background: #fff;
+        &::before{
+          content: '';
+          width: 15px;
+          height: 15px;
+          right: 50%;
+          top: 10px;
+          position: absolute;
+          border-right: 2px solid #bfc1c6;
+          border-bottom: 2px solid #bfc1c6;
+          transform: rotate(-45deg);
+        }
+      }
+    }
+    li:last-child.active, li:first-child.active{
+      a{
+        &::before{
+          border-color: #6f9700;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and(max-width: 992px){
+  .seed{
+    .r-info{
+      padding-left: 0;
+    }
+  }
+  .seed table td {
+    padding: 5px 5px 5px;
+  }
+  .wrapp-seed-table{
+    table{
+      min-width: 600px;
+    }
+    overflow-x: scroll;
+  }
+}

@@ -631,9 +631,7 @@ function prowp_define_product_type_taxonomy()
             'query_var' => true, // принимает запрашиваемые переменные из из url
             'rewrite' => true //красивые ссылки
         ));
-}
-
-;
+};
 
 
 //добавляем таксономию срок хранения

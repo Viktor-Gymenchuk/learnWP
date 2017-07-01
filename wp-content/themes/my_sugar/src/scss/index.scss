@@ -1,0 +1,169 @@
+.slider-index {
+  position: relative;
+  .index-slick-slider {
+    width: 100%;
+    .slick-track {
+      img {
+        height: 768px;
+      }
+    }
+    .slick-arrow {
+      width: 60px;
+      height: 60px;
+      z-index: 10;
+      &::before {
+        content: '';
+      }
+    }
+    .slick-next {
+      right: 30px;
+      background: url(/images/index-sl-next.png) center center no-repeat;
+    }
+    .slick-prev {
+      left: 30px;
+      background: url(/images/index-sl-prext.png) center center no-repeat;
+    }
+  }
+  .slick-dots {
+    position: absolute;
+    right: 9%;
+    bottom: 10px;
+    z-index: 10;
+    width: auto;
+    button {
+      background-color: #fff;
+      border-radius: 50%;
+      &::before {
+        content: '';
+        width: 12px;
+        height: 12px;
+        left: 4px;
+        top: 4px;
+        background-color: #eebe38;
+        border: 1px solid #c89c22;
+        border-radius: 50%;
+        opacity: 0;
+
+      }
+    }
+  }
+}
+
+.our-advantages {
+  h2 {
+    text-align: center;
+    font-family: 'NotoSerifBoldItalic';
+    font-size: 35px;
+    margin-top: 32px;
+    margin-bottom: 51px;
+  }
+  .wrapp-advantages {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 67px;
+    .one-advantages {
+      width: 200px;
+      height: 200px;
+      background: url(/images/index-circle.png) center center no-repeat;
+      display: flex;
+      text-align: center;
+      padding: 0 14px;
+      p {
+        margin: auto;
+        font-size: 18px;
+        color: #28210f;
+        font-family: 'RobotoBold';
+        text-transform: uppercase;
+
+      }
+
+    }
+  }
+}
+
+.reviews {
+  height: 600px;
+  width: 100%;
+  background: url("/images/fon-slider-reviews.jpg") center center no-repeat;
+  background-size: cover;
+
+  .slick-reviews {
+    ul{
+      li{
+        img{
+          margin: auto;
+        }
+      }
+    }
+    .slick-arrow {
+      width: 60px;
+      height: 60px;
+      z-index: 10;
+      &:hover {
+        opacity: 0.7;
+      }
+      &::before {
+        content: '';
+      }
+    }
+    .slick-next {
+      right: -50px;
+      background: url(/images/reviews-sl-next.png) center center no-repeat;
+    }
+    .slick-prev {
+      left: -50px;
+      background: url(/images/reviews-sl-prev.png) center center no-repeat;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    font-family: 'NotoSerifBoldItalic';
+    font-size: 35px;
+    margin-top: 32px;
+    margin-bottom: 51px;
+    color: #fff;
+  }
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .our-advantages .wrapp-advantages {
+    flex-wrap: wrap;
+    justify-content: center;
+    .one-advantages{
+      margin: 20px 30px;
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .reviews{
+    .slick-reviews{
+      .slick-next {
+        right: -30px;
+      }
+      .slick-prev{
+        left: -30px;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 800px) {
+  .reviews{
+    .slick-reviews{
+      ul{
+        li{
+          img{
+            max-width: 60%;
+          }
+        }
+      }
+      .slick-next{
+        right: 0;
+      }
+      .slick-prev{
+        left: 0;
+      }
+    }
+  }
+}
