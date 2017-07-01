@@ -41,7 +41,7 @@ get_header();
 
             <section class="slider-index">
                 <div class="index-slick-slider">
-                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?><?php echo esc_url( get_template_directory_uri() ); ?>/images/index-sl2.jpg" alt="">
+                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/index-sl2.jpg" alt="">
                     <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/index-sl3.jpg" alt="">
                     <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/index-sl4.jpg" alt="">
                     <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/index-sl1.jpg" alt="">

@@ -1,16 +1,43 @@
 <?php
-
+/**
+ * Created by PhpStorm.
+ * User: User
+ * Date: 15.05.2017
+ * Time: 11:45
+ */
 //подключение стилей и скриптов
 
-add_action('wp_enqueue_scripts', 'my_script');
-function my_script() {
-    wp_enqueue_style( 'normalize', get_template_directory_uri() . '/bower_components/normalize-css/normalize.css');
-    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/css/bootstrap.min.css');
-    wp_enqueue_style( 'slick', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick.css');
-    wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick-theme.css');
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/build/css/style.css');
+add_action( 'wp_enqueue_scripts', 'my_style_method' );
+function my_style_method() {
+    wp_enqueue_style( 'normalize', get_template_directory_uri() . '/bower_components/normalize-css/normalize.css' );
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/css/bootstrap.min.css' );
+    wp_enqueue_style( 'slick', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick.css' );
+    wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick-theme.css' );
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/build/css/style.css' );
+
+}
+add_action('wp_enqueue_scripts','my_scripts');
+function my_scripts(){
+    wp_deregister_script('jquery');
+    wp_enqueue_script( 'my_jquery', get_stylesheet_directory_uri() . '/bower_components/jquery/dist/jquery.js' );
+
+    wp_enqueue_script( 'slick', get_stylesheet_directory_uri() . '/bower_components/slick-carousel/slick/slick.min.js' );
+    wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/build/js/main.js' );
+
 }
 
+//
+//function reg_my_js(){
+//    wp_deregister_script('my_jquery');
+//    wp_register_script( 'my_jquery', '/bower_components/jquery/dist/jquery.js');
+//
+//    wp_deregister_script('slick');
+//    wp_register_script( 'slick', '/bower_components/slick-carousel/slick/slick.min.js');
+//
+//    wp_deregister_script ('main');
+//    wp_register_script( 'main', '/build/js/main.js');
+//}
+//add_action("wp_enqueue_script",'reg_my_js');
 
 //регистрация пользовательского типа записи
 add_action('init', 'my_salo');

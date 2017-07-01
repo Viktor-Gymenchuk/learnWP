@@ -14,10 +14,10 @@
             </div>
             <div class="it-room">
                 <a class="logo" href="">
-                    <img src="/images/it-room.png" alt="">
+                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/it-room.png" alt="">
                 </a>
                 <a class="up" href="#up">
-                    <img src="/images/pic-up.png" alt="">
+                    <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/pic-up.png" alt="">
                 </a>
             </div>
         </div>
