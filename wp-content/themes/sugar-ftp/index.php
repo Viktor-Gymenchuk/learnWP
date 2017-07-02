@@ -17,9 +17,9 @@
 get_header(); ?>
 <section class="slider-index">
     <div class="index-slick-slider">
-        <?php query_posts('&cat=4&order=ASC'); ?>
+        <?php query_posts('&cat=4&order=ASC');?>
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <?php if (have_rows('slider_main')): ?>
+            <?php if( have_rows('slider_main') ): ?>
                 <?php while (have_rows('slider_main')): the_row();
                     // vars
                     $image = get_sub_field('image');
@@ -30,17 +30,16 @@ get_header(); ?>
                 <?php endwhile; ?>
             <?php endif; ?>
         <?php endwhile; ?>
-        <?php endif;
-        wp_reset_query(); ?>
+        <?php endif; wp_reset_query(); ?>
     </div>
 </section>
 <div class="container">
     <section class="our-advantages">
         <h2><?php echo get_the_title(51); ?></h2>
         <div class="wrapp-advantages">
-            <?php query_posts('&cat=4&order=ASC'); ?>
+            <?php query_posts('&cat=4&order=ASC');?>
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                <?php if (have_rows('list_benefits')): ?>
+                <?php if( have_rows('list_benefits') ): ?>
                     <?php while (have_rows('list_benefits')): the_row();
                         // vars
                         $image = get_sub_field('advantage');
@@ -51,8 +50,7 @@ get_header(); ?>
                     <?php endwhile; ?>
                 <?php endif; ?>
             <?php endwhile; ?>
-            <?php endif;
-            wp_reset_query(); ?>
+            <?php endif; wp_reset_query(); ?>
         </div>
     </section>
 </div>
@@ -61,9 +59,9 @@ get_header(); ?>
         <h2><?php echo get_the_title(58); ?></h2>
         <div class="slick-reviews">
             <ul>
-                <?php query_posts('&cat=4&order=ASC'); ?>
+                <?php query_posts('&cat=4&order=ASC');?>
                 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-                    <?php if (have_rows('carusel_reviews')): ?>
+                    <?php if( have_rows('carusel_reviews') ): ?>
                         <?php while (have_rows('carusel_reviews')): the_row();
                             // vars
                             $image = get_sub_field('image');
@@ -76,8 +74,7 @@ get_header(); ?>
                         <?php endwhile; ?>
                     <?php endif; ?>
                 <?php endwhile; ?>
-                <?php endif;
-                wp_reset_query(); ?>
+                <?php endif; wp_reset_query(); ?>
             </ul>
         </div>
     </div>

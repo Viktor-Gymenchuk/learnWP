@@ -1,0 +1,138 @@
+.contact {
+  h5 {
+    font-family: 'RobotoBold';
+    font-size: 16px;
+    margin-top: 7px;
+    margin-bottom: 24px;
+  }
+  p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .info-contact {
+    padding-bottom: 26px;
+    width: calc(100% - 15px);
+    border-bottom: 1px solid #e0e0e0;
+    p a {
+      color: #1271c4;
+      font-family: 'RobotoBold';
+    }
+  }
+  .info-addres {
+    h5 {
+      margin-bottom: 20px;
+      line-height: 23px;
+    }
+    padding-top: 28px;
+    width: calc(100% - 15px);
+  }
+  .map {
+    width: calc(100% - 15px);
+    float: right;
+    padding-top: 12px;
+    > h5 {
+      margin-top: 26px;
+      margin-bottom: 8px;
+    }
+    .block-map {
+      height: 230px;
+      background-color: #ccc;
+      h5 {
+        margin-top: 37px;
+      }
+    }
+    .wrapp-form {
+      display: flex;
+      justify-content: space-between;
+      .wpcf7-response-output{
+        display: none!important;
+      }
+      .mail {
+        width: 48%;
+      }
+      input {
+        width: 270px;
+        display: inline-block;
+        font-size: 13px;
+        padding: 9px 13px 10px;
+        margin-bottom: 10px;
+        border: 1px solid #bdbfc5;
+        border-radius: 5px;
+        color: #969696;
+      }
+      input[type='submit'] {
+        background-color: #6f9700;
+        bordeR: none;
+        font-family: 'RobotoBold';
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #fff;
+      }
+      h6 {
+        font-size: 14px;
+        text-transform: uppercase;
+        font-family: 'RobotoBold';
+      }
+    }
+  }
+}
+
+@media only screen and(max-width: 1200px) {
+  .contact {
+    .map .wrapp-form input {
+      width: 220px;
+    }
+  }
+}
+
+@media only screen and(max-width: 992px) {
+  .contact {
+    .map {
+      .wrapp-form {
+        flex-wrap: wrap;
+        input {
+          width: 100%;
+        }
+        .phonr {
+          width: 100%;
+          padding-right: 10px;
+        }
+        .mail {
+          width: 100%;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and(max-width: 768px) {
+  .contact {
+    .map {
+      .wrapp-form {
+        flex-wrap: wrap;
+        .phonr {
+          width: 50%;
+        }
+        .mail {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and(max-width: 400px) {
+  .contact {
+    .map {
+      width: 100%;
+      .wrapp-form {
+        .phonr, .mail{
+          width: 100%;
+          padding: 0;
+        }
+      }
+    }
+  }
+}

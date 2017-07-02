@@ -14,7 +14,6 @@ function my_style_method() {
     wp_enqueue_style( 'slick', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick.css' );
     wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick-theme.css' );
     wp_enqueue_style( 'style', get_template_directory_uri() . '/build/css/style.css' );
-
 }
 add_action('wp_enqueue_scripts','my_scripts');
 function my_scripts(){
@@ -26,18 +25,32 @@ function my_scripts(){
 
 }
 
-//
-//function reg_my_js(){
-//    wp_deregister_script('my_jquery');
-//    wp_register_script( 'my_jquery', '/bower_components/jquery/dist/jquery.js');
-//
-//    wp_deregister_script('slick');
-//    wp_register_script( 'slick', '/bower_components/slick-carousel/slick/slick.min.js');
-//
-//    wp_deregister_script ('main');
-//    wp_register_script( 'main', '/build/js/main.js');
-//}
-//add_action("wp_enqueue_script",'reg_my_js');
+//добавляем миниатюры
+
+if ( function_exists( 'add_theme_support' ) ) {
+    add_theme_support( 'post-thumbnails' );
+}
+// конец добавления миниатюр
+
+/*
+ * Enable support for Post Formats.
+ *
+ * See: https://codex.wordpress.org/Post_Formats
+ */
+
+
+add_theme_support('post-formats', array(
+    'aside',
+    'image',
+    'video',
+    'quote',
+    'link',
+    'gallery',
+    'audio',
+));
+
+
+
 
 //регистрация пользовательского типа записи
 add_action('init', 'my_salo');
@@ -52,12 +65,39 @@ function my_salo()
         'has_arhive' => true,
         'taxonomies' => array('category'),
         'rewrite' => array('slig' => 'product'),
-        'suppurts' => array('title', 'editor', 'author', 'thumbnail', 'comment', 'custom-fields')
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
     );
+
     register_post_type('salo', $args);
 }
 
-add_post_meta(420, 'prowp_price', '34.99', true);
+
+add_action('init', 'IndexPage');
+function IndexPage()
+{
+    $args = array(
+        'labels' => array('IndexPage',
+            'name' => 'Записи Головної',
+            'singular_name' => 'IndexPage'
+        ),
+        'public' => true,
+        'has_arhive' => true,
+//        'taxonomies' => array('category'),
+        'rewrite' => array('slig' => 'product'),
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields')
+    );
+
+    register_post_type('IndexPage', $args);
+}
+
+//вставляем кастомніе поля
+add_post_meta(37, 'MyFyild', '', true);
+
+
+
+//другиетаксономии как образец
+add_post_meta(7, 'Второе кастомное поле', '34.99', true);
+add_post_meta(26, 'Первое кастомное поле', '34.99', true);
 
 
 //добавляем пользовательскую такосономию
@@ -73,10 +113,7 @@ function prowp_define_product_type_taxonomy()
             'query_var' => true, // принимает запрашиваемые переменные из из url
             'rewrite' => true //красивые ссылки
         ));
-}
-
-;
-
+};
 
 //добавляем таксономию срок хранения
 add_action('init', 'time_save');

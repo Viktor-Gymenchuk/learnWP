@@ -1,0 +1,12 @@
+[0427/143315:ERROR:renderer_main.cc(207)] Running without renderer sandbox
+[0427/143322:ERROR:renderer_main.cc(207)] Running without renderer sandbox
+[0427/143323:INFO:CONSOLE(140)] "Uncaught Error: Script error for: file://shared/libs/cc-libraries-api.min.js
+http://requirejs.org/docs/errors.html#scripterror", source: file:///C:/Program%20Files/Adobe/Adobe%20Photoshop%20CC%202015/Required/Plug-Ins/Spaces2//www/src/js/require.js (140)
+[0427/143324:WARNING:message_in_transit_queue.cc(18)] Destroying nonempty message queue
+[0427/143536:ERROR:renderer_main.cc(207)] Running without renderer sandbox
+[0427/143536:WARNING:message_in_transit_queue.cc(18)] Destroying nonempty message queue
+[0427/143537:ERROR:renderer_main.cc(207)] Running without renderer sandbox
+[0427/143539:INFO:CONSOLE(140)] "Uncaught Error: Script error for: file://shared/libs/cc-libraries-api.min.js
+http://requirejs.org/docs/errors.html#scripterror", source: file:///C:/Program%20Files/Adobe/Adobe%20Photoshop%20CC%202015/Required/Plug-Ins/Spaces2//www/src/js/require.js (140)
+[0427/143540:WARNING:message_in_transit_queue.cc(18)] Destroying nonempty message queue
+[0427/164301:WARNING:dns_config_service_win.cc(654)] Failed to read DnsConfig.
