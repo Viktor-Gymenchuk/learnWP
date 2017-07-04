@@ -7,28 +7,31 @@
  */
 //подключение стилей и скриптов
 
-add_action( 'wp_enqueue_scripts', 'my_style_method' );
-function my_style_method() {
-    wp_enqueue_style( 'normalize', get_template_directory_uri() . '/bower_components/normalize-css/normalize.css' );
-    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/css/bootstrap.min.css' );
-    wp_enqueue_style( 'slick', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick.css' );
-    wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick-theme.css' );
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/build/css/style.css' );
+add_action('wp_enqueue_scripts', 'my_style_method');
+function my_style_method()
+{
+    wp_enqueue_style('normalize', get_template_directory_uri() . '/bower_components/normalize-css/normalize.css');
+    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/bower_components/bootstrap/dist/css/bootstrap.min.css');
+    wp_enqueue_style('slick', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick.css');
+    wp_enqueue_style('slick-theme', get_template_directory_uri() . '/bower_components/slick-carousel/slick/slick-theme.css');
+    wp_enqueue_style('style', get_template_directory_uri() . '/build/css/style.css');
 }
-add_action('wp_enqueue_scripts','my_scripts');
-function my_scripts(){
-    wp_deregister_script('jquery');
-    wp_enqueue_script( 'my_jquery', get_stylesheet_directory_uri() . '/bower_components/jquery/dist/jquery.js' );
 
-    wp_enqueue_script( 'slick', get_stylesheet_directory_uri() . '/bower_components/slick-carousel/slick/slick.min.js' );
-    wp_enqueue_script( 'main', get_stylesheet_directory_uri() . '/build/js/main.js' );
+add_action('wp_enqueue_scripts', 'my_scripts');
+function my_scripts()
+{
+    wp_deregister_script('jquery');
+    wp_enqueue_script('my_jquery', get_stylesheet_directory_uri() . '/bower_components/jquery/dist/jquery.js');
+
+    wp_enqueue_script('slick', get_stylesheet_directory_uri() . '/bower_components/slick-carousel/slick/slick.min.js');
+    wp_enqueue_script('main', get_stylesheet_directory_uri() . '/build/js/main.js');
 
 }
 
 //добавляем миниатюры
 
-if ( function_exists( 'add_theme_support' ) ) {
-    add_theme_support( 'post-thumbnails' );
+if (function_exists('add_theme_support')) {
+    add_theme_support('post-thumbnails');
 }
 // конец добавления миниатюр
 
@@ -38,7 +41,7 @@ if ( function_exists( 'add_theme_support' ) ) {
  * See: https://codex.wordpress.org/Post_Formats
  */
 
-
+//регистрация форматов записи
 add_theme_support('post-formats', array(
     'aside',
     'image',
@@ -48,9 +51,21 @@ add_theme_support('post-formats', array(
     'gallery',
     'audio',
 ));
+//регистрация форматов записи конец
 
 
-
+//??????????????????
+//регистрация меню
+register_nav_menus(array(
+    'primary' => __('Primary Menu', 'yadss'),
+    'cereals' => __('Cereals Menu', 'yadss'),
+    'seeds_beets' => __('Seeds beets Menu', 'yadss'),
+    'legumes' => __('Legumes Menu', 'yadss'),
+    'industrial_crops' => __('Industrial crops Menu', 'yadss'),
+    'seeds_clover' => __('Seeds of clover Menu', 'yadss'),
+));
+// регистрируем меню, конец
+//???????????????????
 
 //регистрация пользовательского типа записи
 add_action('init', 'my_salo');
@@ -93,6 +108,12 @@ function IndexPage()
 //вставляем кастомніе поля
 add_post_meta(37, 'MyFyild', '', true);
 
+
+//добавляем пользовательскую такосономию
+function header_tax() {
+    register_taxonomy( 'post_tag', array( 'attachment', 'post' ) );
+}
+add_action( 'init' , 'header_tax' );
 
 
 //другиетаксономии как образец
