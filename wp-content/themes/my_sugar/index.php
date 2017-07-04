@@ -29,13 +29,9 @@ get_header();
                             echo "<img src='" . $nth_image ['full'] . "'/>";
                         };
                         ?>
-
-
-
                     </a>
                 </div>
                 <div class="nav-phone-addres">
-
                     <div class="wrap-phone-addres">
                         <div class="phone">
                           <p><?php echo (get_post_meta( 44, 'phone_header', true) );
@@ -50,7 +46,11 @@ get_header();
                     </div>
 
                     <input class="burger-check" id="burger-check" type="checkbox"><label for="burger-check"
-                                                                                         class="burger"></label>
+                                                                                        class="burger"></label>
+
+
+
+                    <?php wp_nav_menu( ); ?>
                     <nav>
                         <ul>
                             <li><a href="">Головна</a></li>

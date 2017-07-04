@@ -57,12 +57,12 @@ add_theme_support('post-formats', array(
 //??????????????????
 //регистрация меню
 register_nav_menus(array(
-    'primary' => __('Primary Menu', 'yadss'),
-    'cereals' => __('Cereals Menu', 'yadss'),
-    'seeds_beets' => __('Seeds beets Menu', 'yadss'),
-    'legumes' => __('Legumes Menu', 'yadss'),
-    'industrial_crops' => __('Industrial crops Menu', 'yadss'),
-    'seeds_clover' => __('Seeds of clover Menu', 'yadss'),
+    'primary' => __('Primary Menu', 'My_Sugar'),
+    'cereals' => __('Cereals Menu', 'My_Sugar'),
+    'seeds_beets' => __('Seeds beets Menu', 'My_Sugar'),
+    'legumes' => __('Legumes Menu', 'My_Sugar'),
+    'industrial_crops' => __('Industrial crops Menu', 'My_Sugar'),
+    'seeds_clover' => __('Seeds of clover Menu', 'My_Sugar'),
 ));
 // регистрируем меню, конец
 //???????????????????
