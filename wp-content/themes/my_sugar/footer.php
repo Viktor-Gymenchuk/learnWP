@@ -1,3 +1,5 @@
+
+</div>
 <footer>
     <div class="container">
         <div class="wrapp-footer">
@@ -28,3 +30,4 @@
 <?php
 wp_footer();
 ?>
+</div>

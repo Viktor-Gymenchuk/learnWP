@@ -22,10 +22,8 @@ function my_scripts()
 {
     wp_deregister_script('jquery');
     wp_enqueue_script('my_jquery', get_stylesheet_directory_uri() . '/bower_components/jquery/dist/jquery.js');
-
     wp_enqueue_script('slick', get_stylesheet_directory_uri() . '/bower_components/slick-carousel/slick/slick.min.js');
     wp_enqueue_script('main', get_stylesheet_directory_uri() . '/build/js/main.js');
-
 }
 
 //добавляем миниатюры
@@ -150,7 +148,7 @@ function time_save()
         'edit_item' => 'Edit Time_save',
         'update_item' => 'Update Time_save',
         'add_new_item' => 'New Time_save Name',
-        'namu_name' => 'Time_save'
+        'menu_name' => 'Time_save'
     );
     $args = array(
         'labels' => $label,

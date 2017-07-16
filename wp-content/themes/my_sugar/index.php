@@ -1,71 +1,10 @@
 <?php
-
 get_header();
-
-    //wp_list_categories();
 ?>
 
 <?php
 get_header();
 ?>
-
-<div class="wrapper">
-    <div class="content">
-        <div class="container">
-            <header>
-                <div id="up" class="logo">
-                    <a href="">
-
-                        <?php $the_query = new WP_Query('p=44'); ?>
-                        <?php while  ($the_query->have_posts() ) : $the_query->the_post(); ?>
-                            <h1><?php the_title(); ?></h1>
-                        <?php endwhile; ?>
-<!--                        <img src="--><?php //echo esc_url(get_template_directory_uri()); ?><!--/images/logo.jpg" alt="">-->
-
-                        <?php
-                        global $dynamic_featured_image;
-                        $nth_image = $dynamic_featured_image->get_all_featured_images(44);
-                        foreach ($nth_image as $nth_image) {
-                            echo "<img src='" . $nth_image ['full'] . "'/>";
-                        };
-                        ?>
-                    </a>
-                </div>
-                <div class="nav-phone-addres">
-                    <div class="wrap-phone-addres">
-                        <div class="phone">
-                          <p><?php echo (get_post_meta( 44, 'phone_header', true) );
-                            ?>
-                          </p>
-                        </div>
-                        <div class="addres">
-                         <p>   <?php echo (get_post_meta( 44, 'Adres_header', true) );
-                            ?>
-                         </p>
-                        </div>
-                    </div>
-
-                    <input class="burger-check" id="burger-check" type="checkbox"><label for="burger-check"
-                                                                                        class="burger"></label>
-
-
-
-                    <?php wp_nav_menu( ); ?>
-                    <nav>
-                        <ul>
-                            <li><a href="">Головна</a></li>
-                            <li><a href="">Про нас</a></li>
-                            <li><a href="">Біоенергетика</a></li>
-                            <li><a href="">Наукова робота</a></li>
-                            <li><a href="">Продукція</a></li>
-                            <li><a href="">Відгуки</a></li>
-                            <li><a href="">Контакти</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
-        </div>
-
         <section class="slider-index">
             <div class="index-slick-slider">
 
@@ -86,7 +25,12 @@ get_header();
 
                 <?php global $dynamic_featured_image;
                 $nth_image = $dynamic_featured_image->get_all_featured_images(36);
+//                $nth_title = $dynamic_featured_image->get_image_alt(36);
+//                foreach ($nth_image as $nth_image) {
+//                    echo  $nth_title['full'];
+//                }
                 foreach ($nth_image as $nth_image) {
+//                    echo  $nth_title['full'];
                     echo "<div> <img src='" . $nth_image ['full'] . "' /> </div>";
                 };
                 ?>
@@ -156,9 +100,6 @@ get_header();
                 </div>
             </div>
         </section>
-    </div>
-    <?php get_footer(); ?>
-</div>
 
 
 <!--<div id="showcase">-->
